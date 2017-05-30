@@ -1,0 +1,17 @@
+<div class="container-heroes-list container container-fluid">
+    <div class="page-header">
+        <h1>Heroes</h1>
+    </div>
+    <div class="list-group" *ngFor="let hero of heroes; let i = index">
+        <div class="input-group input-group-lg" (click)="selectHero(i)">
+            <span class="input-group-addon">{{ hero.id }}</span>
+            <li class="form-control" [ngClass]="{'selected': hero == selectedHero}">
+                {{ hero.name }}
+            </li>
+        </div>
+    </div>
+
+    <div *ngIf="selectedHero">
+        <app-hero-detail [hero]="selectedHero"></app-hero-detail>
+    </div>
+</div>
