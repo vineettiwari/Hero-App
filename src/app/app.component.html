@@ -6,7 +6,12 @@
             </div>
 
             <ul class="nav navbar-nav navbar-right">
-                <li><a routerLink="heroes">Home</a></li>
+                <!--<li>
+                    <div class="navbar-header">
+                        <a routerLink="heroes" class="navbar-brand">{{ title }} App</a>
+                    </div>
+                </li>-->
+                <!--<li><a routerLink="heroes">Home</a></li>-->
                 <li><a routerLink="about">About</a></li>
             </ul>
         </div>
@@ -14,23 +19,13 @@
 </header>
 
 <main>
+    <div class="btn-group container container-fluid btn-container" role="group">
+        <button class="btn btn-default btn-lg btn-display-option" type="button"
+            routerLink="/dashboard" routerLinkActive="active">Dashboard</button>
+
+        <button class="btn btn-default btn-lg btn-display-option" type="button"
+            routerLink="/heroes" routerLinkActive="active">Heroes</button>
+    </div>
+
     <router-outlet></router-outlet>
 </main>
-
-<!--<div class="container-heroes-list container container-fluid">
-    <div class="page-header">
-        <h1>Heroes</h1>
-    </div>
-    <div class="list-group" *ngFor="let hero of heroes; let i = index">
-        <div class="input-group input-group-lg" (click)="selectHero(i)">
-            <span class="input-group-addon">{{ hero.id }}</span>
-            <li class="form-control" [ngClass]="{'selected': hero == selectedHero}">
-                {{ hero.name }}
-            </li>
-        </div>
-    </div>
-
-    <div *ngIf="selectedHero">
-        <app-hero-detail [hero]="selectedHero"></app-hero-detail>
-    </div>
-</div>-->

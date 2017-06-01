@@ -1,0 +1,13 @@
+<div class="container-heroes-list container container-fluid container-hero-dash">
+    <div class="page-header text-center">
+        <h1>Top Heroes</h1>
+    </div>
+
+    <div class="row">
+        <div class="col-xs-6 col-sm-3 col-md-3" *ngFor="let hero of heroes; let i = index">
+            <a [routerLink]="['/heroes', hero.id ]" class="thumbnail hero-cell">
+                <h4>{{ hero.name }}</h4>
+            </a>
+        </div>
+    </div>
+</div>

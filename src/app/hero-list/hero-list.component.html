@@ -1,17 +1,21 @@
-<div class="container-heroes-list container container-fluid">
+<div class="container-heroes-list container container-fluid container-hero-list">
     <div class="page-header">
-        <h1>Heroes</h1>
+        <h1>My Heroes</h1>
     </div>
+
     <div class="list-group" *ngFor="let hero of heroes; let i = index">
         <div class="input-group input-group-lg" (click)="selectHero(i)">
             <span class="input-group-addon">{{ hero.id }}</span>
-            <li class="form-control" [ngClass]="{'selected': hero == selectedHero}">
+            <li class="form-control" [ngClass]="{ 'selected': hero == selectedHero }">
                 {{ hero.name }}
             </li>
         </div>
     </div>
 
-    <div *ngIf="selectedHero">
-        <app-hero-detail [hero]="selectedHero"></app-hero-detail>
+    <div *ngIf="selectedHero" class="jumbotron container-selected-hero row">
+        <div class="col-md-10 col-md-offset-2">
+            <h1>{{ selectedHero.name }} is my hero</h1>
+            <button class="btn btn-default btn-lg btn-show-details" type="button" [routerLink]="['/heroes', selectedHero.id]">Show Details</button>
+        </div>
     </div>
 </div>

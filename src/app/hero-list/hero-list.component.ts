@@ -13,6 +13,7 @@ import { HeroDetailComponent } from '../hero-detail/hero-detail.component';
 export class HeroListComponent implements OnInit {
     title: string = 'Tour Of Heroes';
     heroes: Hero[] = null;
+    temp: Hero = null;
     selectedHero: Hero = null;
 
     constructor(private _heroService: HeroService) { }
@@ -27,6 +28,6 @@ export class HeroListComponent implements OnInit {
 
     selectHero(index: number) {
         this.selectedHero = this.heroes[index];
-        console.log(this.selectedHero.name + " was selected.");
+        console.log("You selected: " + this.selectedHero.name);
     }
 }

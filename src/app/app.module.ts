@@ -8,6 +8,8 @@ import { AppRouting } from './app.routing';
 import { HeroService } from './hero.service';
 import { HeroDetailComponent } from './hero-detail/hero-detail.component';
 import { HeroListComponent } from './hero-list/hero-list.component';
+import { HeroDashboardComponent } from './hero-dashboard/hero-dashboard.component';
+import { AboutComponent } from './about/about.component';
 
 
 @NgModule({
@@ -15,6 +17,8 @@ import { HeroListComponent } from './hero-list/hero-list.component';
         AppComponent,
         HeroDetailComponent,
         HeroListComponent,
+        HeroDashboardComponent,
+        AboutComponent,
     ],
     imports: [
         BrowserModule,
