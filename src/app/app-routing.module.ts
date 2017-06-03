@@ -1,4 +1,4 @@
-import { ModuleWithProviders } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 import { HeroListComponent } from './hero-list/hero-list.component';
@@ -15,16 +15,14 @@ const routes: Routes = [
     },
     {
         path: 'heroes',
-        component: HeroListComponent,
-        data: {pathname: 'hero-list'}
+        component: HeroListComponent
     },
     {
         path: 'dashboard',
-        component: HeroDashboardComponent,
-        data: {pathname: 'hero-dash'}
+        component: HeroDashboardComponent
     },
     {
-        path: 'heroes/:id',
+        path: 'detail/:id',
         component: HeroDetailComponent
     },
     {
@@ -38,4 +36,13 @@ const routes: Routes = [
     }
 ];
 
-export const AppRouting: ModuleWithProviders = RouterModule.forRoot(routes);
+@NgModule({
+    imports: [
+        RouterModule.forRoot(routes)
+    ],
+    exports: [
+        RouterModule
+    ]
+})
+
+export class AppRoutingModule { }

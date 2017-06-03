@@ -4,7 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
-import { AppRouting } from './app.routing';
+import { AppRoutingModule } from './app-routing.module';
 import { HeroService } from './hero.service';
 import { HeroDetailComponent } from './hero-detail/hero-detail.component';
 import { HeroListComponent } from './hero-list/hero-list.component';
@@ -18,18 +18,20 @@ import { AboutComponent } from './about/about.component';
         HeroDetailComponent,
         HeroListComponent,
         HeroDashboardComponent,
-        AboutComponent,
+        AboutComponent
     ],
     imports: [
         BrowserModule,
         FormsModule,
         HttpModule,
-        AppRouting
+        AppRoutingModule
     ],
     providers: [
         HeroService
     ],
-    bootstrap: [AppComponent]
+    bootstrap: [
+        AppComponent
+    ]
 })
 
 export class AppModule { }
